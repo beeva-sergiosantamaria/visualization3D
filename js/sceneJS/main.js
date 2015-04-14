@@ -26,7 +26,7 @@ function init() {
         scene.add(camera);
         controlsdevice = new DeviceOrientationController(camera);
         controlsdevice.connect();
-		//voiceEngine.start();
+		voiceEngine.start();
 
     }
 
