@@ -1,0 +1,90 @@
+body {
+	font-family: Monospace;
+	background-color: #000000;
+	/*background-image: url("../images/textures/text5.jpg");*/
+	margin: 0px;
+	overflow: hidden;
+}
+
+#menu {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  float: right;
+  width: 7%;
+}
+
+#menu2 {
+  position: absolute;
+  float: left;
+  top: 10px;
+  left: 40px;
+  width: 7%;
+}
+
+button {
+  font-weight: bold;
+  color: rgba(145, 145, 145, 0.75);
+  background: transparent;
+  margin-bottom: 5px;
+  outline: 1px solid rgba(13, 134, 134, 0.75);
+  border: 0px;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 130px;
+}
+button:hover {
+  background-color: rgba(23, 31, 31, 0.5);
+}
+button:active {
+  color: #000000;
+  background-color: rgba(0,255,255,0.75);
+}
+text {
+  font: 10px sans-serif;
+}
+#puntero {
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  border: 3px solid white;
+  top: 165px;
+  right: 140px;
+  background-color: transparent;
+  border-radius: 50px;
+}
+.info {
+  position: absolute;
+  bottom: 100px;
+  right: -100px;
+  float: right;
+  width: 7%;
+}
+.panel {
+  background-color: rgba(71, 70, 70, 0.5);
+  width: 100px;
+  height: 100px;
+  font-size: 6px;
+  padding-left: 3px;
+  padding-top: 5px;
+  color: white;
+  padding: 4px;
+}
+.info2 {
+  position: absolute;
+  bottom: 100px;
+  right: -200px;
+  float: right;
+  width: 7%;
+}
+
+.panel2 {
+  background-color: rgba(71, 70, 70, 0.5);
+  width: 200px;
+  height: 200x;
+  font-size: 15px;
+  padding-left: 3px;
+  padding-top: 5px;
+  color: white;
+  padding: 10px;
+}
