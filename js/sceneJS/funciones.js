@@ -4,38 +4,43 @@ function onDocumentMouseDown( event )
 {
     raycaster.setFromCamera( mouse, camera );   
     raycaster2.setFromCamera( mouse, camera );
+    raycaster3.setFromCamera( mouse, camera );
     var intersects = raycaster.intersectObjects( scene.children[4].children );
-    var intersects2 = raycaster2.intersectObjects( scene.children[7].children );
+    var intersects2 = raycaster2.intersectObjects( scene.children[6].children );
+    var intersects3 = raycaster3.intersectObjects( scene.children[8].children );
 
     switch ( event.button ) {
             case 0: // left 
-                var longMarcadorUnico = scene.children[9].children.length;
+                var longMarcadorUnico = scene.children[8].children.length;
                 var longi = scene.children[6].children.length;
                 var longiChildren = scene.children.length;
-                for (var a=0; a<longi; a ++) {
+                /*for (var a=0; a<longi; a ++) {
                        scene.children[6].children[a].scale.set(0,0,0);    
                        }
                 for (var e=0; e<longiChildren; e++){
                       if(scene.children[e].type == "Sprite") scene.remove(scene.children[e]); 
-                      }
+                      }*/
                 for( var t = 0; t<longMarcadorUnico; t++){
                                         if(t<2) valor=0;
                                         if(t>=2 && t<4) valor=350;
                                         if(t>=4 && t<6) valor=700;
-                                        if(t%2 == 0) { scene.children[9].children[t].position.set(valor,16000,0);}
-                                        else { scene.children[9].children[t].position.set(valor,16000,0); }
+                                        if(t%2 == 0) { scene.children[8].children[t].position.set(valor,16000,0);}
+                                        else { scene.children[8].children[t].position.set(valor,16000,0); }
                                     }  
                 for( var t = 0; t<longTravelPoints; t++){
                                         if(t<2) valor=0;
                                         if(t>=2 && t<4) valor=350;
                                         if(t>=4 && t<6) valor=700;
-                                        if(t%2 == 0) { scene.children[10].children[t].position.set(valor,16000,0);}
-                                        else { scene.children[10].children[t].position.set(valor,16000,0); }
+                                        if(t%2 == 0) { scene.children[9].children[t].position.set(valor,16000,0);}
+                                        else { scene.children[9].children[t].position.set(valor,16000,0); }
                                     }
                 for( var t = 0; t<longInfoPanels; t++){
                                         valor=0;
-                                        scene.children[11].children[t].position.set(valor,16000,0);
-                                    }                                 
+                                        scene.children[10].children[t].position.set(valor,16000,0);
+                                    }  
+                if(intersects3[0] != undefined) {
+                    
+                }                                                   
                 if(intersects[0] != undefined) {
                     var target = points[intersects[0].object.id-valorDescuento].point;
                     var tween = new TWEEN.Tween(camera.position).to({
@@ -49,17 +54,17 @@ function onDocumentMouseDown( event )
                 if(intersects2[0] != undefined) {
                     grupoNuevo = INTERSECTED2.grupo;
 
-                    for (var i = 0; i < scene.children[7].children.length; i++) {
-                        if(scene.children[7].children[i].grupo == grupoActual && scene.children[7].children[i].name != 'soporte') {scene.children[7].children[i].activeItem = 0;scene.children[7].children[i].material.emissive.setHex(0x000000);scene.children[7].children[i].material.color.setHex(0x767676 );scene.children[7].children[i].material.opacity = 0.6}
+                    for (var i = 0; i < scene.children[6].children.length; i++) {
+                        if(scene.children[6].children[i].grupo == grupoActual && scene.children[6].children[i].name != 'soporte') {scene.children[6].children[i].activeItem = 0;scene.children[6].children[i].material.emissive.setHex(0x000000);scene.children[6].children[i].material.color.setHex(0x767676 );scene.children[6].children[i].material.opacity = 0.6}
                         }
 
-                    for (var i = 0; i < scene.children[7].children.length; i++) {
-                                if(grupoNuevo == scene.children[7].children[i].grupo) { 
-                                        scene.children[7].children[i].material.opacity=1;
-                                        scene.children[7].children[i].material.emissive.setHex( 0x088A4B);
-                                        scene.children[7].children[i].material.color.setHex( 0x088A4B);
-                                        scene.children[7].children[i].activeItem = 1;
-                                        grupoActual = scene.children[7].children[i].grupo;
+                    for (var i = 0; i < scene.children[6].children.length; i++) {
+                                if(grupoNuevo == scene.children[6].children[i].grupo) { 
+                                        scene.children[6].children[i].material.opacity=1;
+                                        scene.children[6].children[i].material.emissive.setHex( 0x088A4B);
+                                        scene.children[6].children[i].material.color.setHex( 0x088A4B);
+                                        scene.children[6].children[i].activeItem = 1;
+                                        grupoActual = scene.children[6].children[i].grupo;
                                     }
                                 }
                     for (var i = 0; i < scene.children[3].children.length; i++) {
@@ -83,8 +88,7 @@ function onDocumentMouseDown( event )
                                                             y: alt2+15
                                                         }).easing(TWEEN.Easing.Quintic.In).onUpdate(function () {
                                                         }).delay(500).start(); 
-                            }                                   
-                ///////////        
+                            }     
                 }
                 
                 break;
@@ -119,17 +123,12 @@ function borrarLineas() {
         }
         for (e = scene.children[3].children.length - 1; e >= 0 ; e --  ) {
             obje = scene.children[3].children[e];
-                obje.material.emissive.setHex(obj.colors[e]);
-				obje.material.color.setHex(obj.colors[e]);
 				obje.material.opacity = 0.7;
         }
         for (u = scene.children[4].children.length - 1; u >= 0 ; u --  ) {
             obje2 = scene.children[4].children[u];
-                obje2.material.emissive.setHex(0x767676);
-				obje2.material.color.setHex(0x000000);
 				obje2.material.opacity = 0.9;
-        }
-	colorSelect = 1;			
+        }			
 }
 
 function makeTextSprite( message, parameters )

@@ -41,7 +41,7 @@ function init() {
         controls = new THREE.FirstPersonControls( camera );
 				controls.movementSpeed = 1000;
 				controls.lookSpeed = 0.06;
-        valorDescuento = 34;        
+        valorDescuento = 33;        
 		//voiceEngine.start();
     }
 
@@ -60,7 +60,7 @@ function init() {
     group = new THREE.Group();
     group2 = new THREE.Group();
     leyendasGroup = new THREE.Group();
-    graficas = new THREE.Object3D();
+    //graficas = new THREE.Object3D();
     marcador = new THREE.Group();
     fechasMarcadores = new THREE.Group();
     marcadorUnico = new THREE.Object3D();
@@ -71,7 +71,7 @@ function init() {
     scene.add(group);
     scene.add(group2);
     scene.add(leyendasGroup);
-    scene.add(graficas);
+    //scene.add(graficas);
     scene.add(marcador);
     scene.add(fechasMarcadores);
     scene.add(marcadorUnico);
@@ -98,7 +98,7 @@ function init() {
     addGeoObject(group, obj);
     addGeoObject2(group2, obj);
     addLeyendas(scene, points, obj,leyendasGroup);
-    addGraficas(graficas);
+    //addGraficas(graficas);
     addMarcadores(marcador);
     addFechaMarcadores(fechasMarcadores);
     addMarcadorUnico(marcadorUnico);
@@ -168,6 +168,14 @@ var cont2 = 0;
 var cont3 = 0;
 var cont4 = 0;
 function render() {
+		CONTENIDO = scene.children[3];
+		CUBIERTA = scene.children[4];
+		LETREROS = scene.children[5];
+		MARCADOR = scene.children[6];
+		FECHARMARC = scene.children[7];
+		MARCUNICO = scene.children[8];
+		ACTIONS = scene.children[9];
+		INFOACTIONS = scene.children[10];
 		//group.rotation.y += ( group.rotation.y ) * 0.05;
         //if(!effect) {
             raycaster.setFromCamera( mouse, camera );
@@ -175,21 +183,21 @@ function render() {
             raycaster3.setFromCamera( mouse, camera );
             raycaster4.setFromCamera( mouse, camera );
 
-            longDistritos = scene.children[4].children.length;
-            longMarcador = scene.children[7].children.length;
-            longMarcadorUnico = scene.children[9].children.length;
-            longTravelPoints = scene.children[10].children.length;
-            longInfoPanels = scene.children[11].children.length;
+            longDistritos = CUBIERTA.children.length;
+            longMarcador = MARCADOR.children.length;
+            longMarcadorUnico = MARCUNICO.children.length;
+            longTravelPoints = ACTIONS.children.length;
+            longInfoPanels = INFOACTIONS.children.length;
 
-            var intersects = raycaster.intersectObjects( scene.children[4].children );
-            var intersects2 = raycaster2.intersectObjects( scene.children[7].children );
-            var intersects3 = raycaster3.intersectObjects( scene.children[9].children );
-            var intersects4 = raycaster4.intersectObjects( scene.children[10].children );
+            var intersects = raycaster.intersectObjects( CUBIERTA.children );
+            var intersects2 = raycaster2.intersectObjects( MARCADOR.children );
+            var intersects3 = raycaster3.intersectObjects( MARCUNICO.children );
+            var intersects4 = raycaster4.intersectObjects( ACTIONS.children );
 
-                    /////////////////////////////
-                    //interseccion travel points
-                    /////////////////////////////
-            //if(controlsdevice) {                
+            /////////////////////////////
+            //interseccion travel points
+            /////////////////////////////
+            if(controlsdevice) {                
                     if (INTERSECTED4) cont4 = cont4+1;
                     if ( intersects4.length > 0 ) {
 
@@ -215,32 +223,7 @@ function render() {
                         if (INTERSECTED4 && cont4>30) {
 
                         if ( intersects4.length > 0 && cont4 == 31) {
-                             var longi = scene.children[6].children.length;
-                             var longiChildren = scene.children.length;
-                             for (var a=0; a<longi; a ++) {
-                                        scene.children[6].children[a].scale.set(0,0,0);    
-                                        }
-                             for (var e=0; e<longiChildren; e++){
-                                            if(scene.children[e].type == "Sprite") scene.remove(scene.children[e]); 
-                                        }
-                             for( var t = 0; t<longMarcadorUnico; t++){
-                                        if(t<2) valor=0;
-                                        if(t>=2 && t<4) valor=350;
-                                        if(t>=4 && t<6) valor=700;
-                                        if(t%2 == 0) { scene.children[9].children[t].position.set(valor,16000,0);}
-                                        else { scene.children[9].children[t].position.set(valor,16000,0); }
-                                    }   
-                             for( var t = 0; t<longTravelPoints; t++){
-                                        if(t<2) valor=0;
-                                        if(t>=2 && t<4) valor=350;
-                                        if(t>=4 && t<6) valor=700;
-                                        if(t%2 == 0) { scene.children[10].children[t].position.set(valor,16000,0);}
-                                        else { scene.children[10].children[t].position.set(valor,16000,0); }
-                                    }
-                             for( var t = 0; t<longInfoPanels; t++){
-                                        valor=0;
-                                        scene.children[11].children[t].position.set(valor,16000,0);
-                                    }       
+                             var longiChildren = scene.children.length;            
 
                             if (INTERSECTED4.name == 'viajar') {
                                 var tween = new TWEEN.Tween(camera.position).to({
@@ -259,9 +242,27 @@ function render() {
                                 borrarLineas(objetoTarget);
 
                             }
+                            for( var t = 0; t<longMarcadorUnico; t++){
+                                        if(t<2) valor=0;
+                                        if(t>=2 && t<4) valor=350;
+                                        if(t>=4 && t<6) valor=700;
+                                        if(t%2 == 0) { MARCUNICO.children[t].position.set(valor,16000,0);}
+                                        else { MARCUNICO.children[t].position.set(valor,16000,0); }
+                                    }   
+                             for( var t = 0; t<longTravelPoints; t++){
+                                        if(t<2) valor=0;
+                                        if(t>=2 && t<4) valor=350;
+                                        if(t>=4 && t<6) valor=700;
+                                        if(t%2 == 0) { ACTIONS.children[t].position.set(valor,16000,0);}
+                                        else { ACTIONS.children[t].position.set(valor,16000,0); }
+                                    }
+                             for( var t = 0; t<longInfoPanels; t++){
+                                        valor=0;
+                                        INFOACTIONS.children[t].position.set(valor,16000,0);
+                                    }       
                           }
                         }
-                    //}    
+                    }    
                     /////////////////////////////
                     // interseccion marcadores unicos
                     /////////////////////////////
@@ -290,8 +291,7 @@ function render() {
 
                         INTERSECTED3 = null;
                     }
-                    //if (INTERSECTED3 && cont2>60 && controlsdevice) {
-                      if (INTERSECTED3 && cont3>60) {
+                    if (INTERSECTED3 && cont2>60 && controlsdevice) {
 
                         if ( intersects3.length > 0 && cont3 == 61) {
                                 if(INTERSECTED3.name =='2012') {
@@ -299,8 +299,7 @@ function render() {
                                     new TWEEN.Tween(objetoActual.position).to({
                                                             y: alt
                                                         }).easing(TWEEN.Easing.Quintic.In).onUpdate(function () {
-                                                        }).delay(300).start();
-                                    resetObject = objetoActual;                     
+                                                        }).delay(300).start();                   
                                 }
                                 if(INTERSECTED3.name =='2013') {
                                     var alt = a2013[objetoTarget];
@@ -315,8 +314,7 @@ function render() {
                                     new TWEEN.Tween(objetoActual.position).to({
                                                             y: alt
                                                         }).easing(TWEEN.Easing.Quintic.In).onUpdate(function () {
-                                                        }).delay(300).start();
-                                    resetObject = objetoActual;                    
+                                                        }).delay(300).start();                 
                                 }                     
                             }
                         }
@@ -354,16 +352,16 @@ function render() {
                     		grupoNuevo = INTERSECTED2.grupo;
 
 		                    for (var i = 0; i < longMarcador; i++) {
-			                       if(scene.children[7].children[i].grupo == grupoActual && scene.children[7].children[i].name !='soporte') {scene.children[7].children[i].activeItem = 0;scene.children[7].children[i].material.emissive.setHex(0x000000);scene.children[7].children[i].material.color.setHex(0x767676 );scene.children[7].children[i].material.opacity = 0.6}
+			                       if(scene.children[6].children[i].grupo == grupoActual && scene.children[6].children[i].name !='soporte') {scene.children[6].children[i].activeItem = 0;scene.children[6].children[i].material.emissive.setHex(0x000000);scene.children[6].children[i].material.color.setHex(0x767676 );scene.children[6].children[i].material.opacity = 0.6}
 			                    }
 
 			                for (var i = 0; i < longMarcador; i++) {
-			                    if(grupoNuevo == scene.children[7].children[i].grupo) {	
-				                    	scene.children[7].children[i].material.opacity=1;
-				                    	scene.children[7].children[i].material.emissive.setHex( 0x088A4B);
-			                            scene.children[7].children[i].material.color.setHex( 0x088A4B);
-			                            scene.children[7].children[i].activeItem = 1;
-			                            grupoActual = scene.children[7].children[i].grupo;
+			                    if(grupoNuevo == scene.children[6].children[i].grupo) {	
+				                    	scene.children[6].children[i].material.opacity=1;
+				                    	scene.children[6].children[i].material.emissive.setHex( 0x088A4B);
+			                            scene.children[6].children[i].material.color.setHex( 0x088A4B);
+			                            scene.children[6].children[i].activeItem = 1;
+			                            grupoActual = scene.children[6].children[i].grupo;
 			                        }
 	                        	}
 	                        for (var i = 0; i < scene.children[3].children.length; i++) {
@@ -434,58 +432,58 @@ function render() {
                                         if(t<2) valor=0;
                                         if(t>=2 && t<4) valor=350;
                                         if(t>=4 && t<6) valor=700;
-                                        if(t%2 == 0) { scene.children[9].children[t].position.set(valor,8000,0);}
-                                        else { scene.children[9].children[t].position.set(valor,8000,0); }
+                                        if(t%2 == 0) { scene.children[8].children[t].position.set(valor,8000,0);}
+                                        else { scene.children[8].children[t].position.set(valor,8000,0); }
                                     }
                             for (var t = 0; t<longTravelPoints; t++){
                                         if(t<2) valor=0;
                                         if(t>=2 && t<4) valor=350;
                                         if(t>=4 && t<6) valor=700;
-                                        if(t%2 == 0) { scene.children[10].children[t].position.set(valor,8000,0);}
-                                        else { scene.children[10].children[t].position.set(valor,8000,0); }   
+                                        if(t%2 == 0) { scene.children[9].children[t].position.set(valor,8000,0);}
+                                        else { scene.children[9].children[t].position.set(valor,8000,0); }   
                             }
                             for (var t = 0; t<longInfoPanels; t++){
                                         valor=0;
-                                        scene.children[11].children[t].position.set(valor,8000,0);   
+                                        scene.children[10].children[t].position.set(valor,8000,0);   
                             }         
                         }      
 
                     	if ( intersects.length > 0 && cont == 65) {
                                     destino = intersects[0].object.id-valorDescuento;
 
+                                    scene.children[8].position.set(points[destino].point.x,0,points[destino].point.z);
                                     scene.children[9].position.set(points[destino].point.x,0,points[destino].point.z);
                                     scene.children[10].position.set(points[destino].point.x,0,points[destino].point.z);
-                                    scene.children[11].position.set(points[destino].point.x,0,points[destino].point.z);
 
                                     for( var t = 0; t<longMarcadorUnico; t++){
-                                         new TWEEN.Tween(scene.children[9].children[t].position).to({
+                                         new TWEEN.Tween(scene.children[8].children[t].position).to({
                                                     y: 700
                                                 }).easing(TWEEN.Easing.Quintic.In).delay(300).onUpdate(function () {
                                                 }).delay(300).start(); 
                                     }
                                     for( var t = 0; t<longMarcadorUnico; t++){
-                                        if (scene.children[9].children[t].name=='letrero') scene.children[9].children[t].material.opacity = 1;
-                                        else scene.children[9].children[t].material.opacity = 0.6;
+                                        if (scene.children[8].children[t].name=='letrero') scene.children[8].children[t].material.opacity = 1;
+                                        else scene.children[8].children[t].material.opacity = 0.6;
                                     }
                                     for( var t = 0; t<longTravelPoints; t++){
-                                         new TWEEN.Tween(scene.children[10].children[t].position).to({
+                                         new TWEEN.Tween(scene.children[9].children[t].position).to({
                                                     y: 970
                                                 }).easing(TWEEN.Easing.Quintic.In).delay(300).onUpdate(function () {
                                                 }).delay(300).start(); 
                                     }
                                     for( var t = 0; t<longTravelPoints; t++){
-                                        if (scene.children[10].children[t].name=='letrero') scene.children[10].children[t].material.opacity = 1;
-                                        else scene.children[10].children[t].material.opacity = 0.6;
+                                        if (scene.children[9].children[t].name=='letrero') scene.children[9].children[t].material.opacity = 1;
+                                        else scene.children[9].children[t].material.opacity = 0.6;
                                     }
                                     for( var t = 0; t<longInfoPanels; t++){
                                         if (t<2) {
-                                            new TWEEN.Tween(scene.children[11].children[t].position).to({
+                                            new TWEEN.Tween(scene.children[10].children[t].position).to({
                                                     y: 1100
                                                 }).easing(TWEEN.Easing.Quintic.In).onUpdate(function () {
                                                 }).delay(300).start(); 
                                         }
                                         else  {
-                                              new TWEEN.Tween(scene.children[11].children[t].position).to({
+                                              new TWEEN.Tween(scene.children[10].children[t].position).to({
                                                     y: 840
                                                 }).easing(TWEEN.Easing.Quintic.In).onUpdate(function () {
                                                 }).delay(300).start(); 
@@ -493,53 +491,13 @@ function render() {
                                     }
 
 
-                                    scene.children[9].lookAt( new THREE.Vector3( camera.position.x,200,camera.position.z ) ); 
+                                    scene.children[8].lookAt( new THREE.Vector3( camera.position.x,200,camera.position.z ) ); 
+                                    scene.children[9].lookAt( new THREE.Vector3( camera.position.x,200,camera.position.z ) );
                                     scene.children[10].lookAt( new THREE.Vector3( camera.position.x,200,camera.position.z ) );
-                                    scene.children[11].lookAt( new THREE.Vector3( camera.position.x,200,camera.position.z ) );
 
-                                        var punto = intersects[ 0 ].object.id-valorDescuento; 
-                                        console.log(punto);
-
-                             			addCarteles(punto);
-                                        
-		                                if(punto==7 || punto==17) {    
-		                                    var alt = 80;
-
-		                                    var margin = 80;
-
-		                                    var longi = scene.children[6].children.length;
-
-		                                    for (var a=0; a<longi; a ++) {
-
-		                                    var altu = Math.floor((Math.random() * 300) + 80);
-
-		                             		scene.children[6].children[a].position.set(points[punto].point.x+(80*a),points[punto].point.y+(altu/2)+a2012[punto],points[punto].point.z-(40*a));
-								
-		                                    scene.children[6].children[a].scale.set(1,1,1);
-                                            if (scene.children[6].children[a].name != 'letrero') {
-        		                                     new TWEEN.Tween(scene.children[6].children[a].scale).to({
-        										            y: altu
-        										        }).easing(TWEEN.Easing.Quintic.In).onUpdate(function () {
-        										        }).start(); 
-        										     }
-                                                }     
-										    var spritey = makeTextSprite( 'Histórico de uso de tarjetas', 
-													{ fontsize: 20, borderColor: {r:255, g:0, b:0, a:0}, backgroundColor: {r:100, g:100, b:100, a:0.5}, color: '#FF8000' } );
-												spritey.position.set(points[punto].point.x+300, 620, points[punto].point.z);
-												scene.add( spritey );
-												    
-		                                    }
-		                                 if(punto!=7 && punto!=17) {
-		                                 	var longi = scene.children[6].children.length;
-		                                 	var longiChildren = scene.children.length;
-		                                 	for (var a=0; a<longi; a ++) {
-											    scene.children[6].children[a].scale.set(0,0,0);    
-		                                 		}
-			                                for (var e=0; e<longiChildren; e++){
-			                                 	if(scene.children[e].type == "Sprite") scene.remove(scene.children[e]);	
-			                                 	}
-		                                 	}
-                                 } 
+                                    var punto = intersects[ 0 ].object.id-valorDescuento; 
+                           			addCarteles(punto);
+                                 }
 
                             if (controlsdevice) document.getElementById("info").style.right="80px"; document.getElementById("info").style.transition="all 0.2s";
                             if (controls) document.getElementById("info").style.right="150px"; document.getElementById("info").style.transition="all 0.2s";
@@ -559,9 +517,6 @@ function animate() {
 
 		render();
 
-		/*if ( controls.gamma < 1 && controls.gamma > 0 ) { controls.autoForward = true; }
-		if ( controls.gamma > -1 && controls.gamma < 0 ) { controls.autoForward = false; }*/
-
 		if(controls) controls.update( clock.getDelta() );
 		if(controlsdevice) controlsdevice.update();
 		if(controlsLeap) controlsLeap.up
@@ -573,7 +528,6 @@ function animate() {
 /////////////////////////
 
 voiceEngine.addAction(new VoiceAction("centro", function(){
-      console.log('no entra aqui');
       cambiarCamara(0);
     }));
 voiceEngine.addAction(new VoiceAction("arganzuela", function(){
@@ -622,7 +576,6 @@ voiceEngine.addAction(new VoiceAction("hortaleza", function(){
       cambiarCamara(15);
     }));
 voiceEngine.addAction(new VoiceAction("villaverde", function(){
-	console.log('no entra');
       cambiarCamara(16);
     }));
 voiceEngine.addAction(new VoiceAction("villa vallecas", function(){

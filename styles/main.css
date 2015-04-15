@@ -1,11 +1,60 @@
 body {
 	font-family: Monospace;
-	background-color: #000000;
+	background-color: #045FB4;
 	/*background-image: url("../images/textures/text5.jpg");*/
 	margin: 0px;
 	overflow: hidden;
 }
-
+.caja {
+  position: absolute;
+  left: 30px;
+  top: 80px;
+  padding-left: 20px;
+}
+.indicaciones {
+  opacity: 1;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  font-family: "Times New Roman";
+  padding-left: 20px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.hideIndicaciones {
+  opacity:0;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  font-family: "Times New Roman";
+  padding-left: 20px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.cajaEnlace {
+  position: absolute;
+  bottom: 30px;
+  right:30px;
+  border:solid 2px white;
+  border-radius: 5px;
+}
+.cajaEnlace:hover {
+  background-color: #0B3861; 
+}
+.enlace {
+  text-decoration: none;
+  font-family: "Times New Roman";
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 10px;
+}
 #menu {
   position: absolute;
   bottom: 10px;

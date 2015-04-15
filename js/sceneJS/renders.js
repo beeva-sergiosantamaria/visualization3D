@@ -324,25 +324,6 @@ for( var i = id; i < (id+1); i += 1) {
 	var puntoX;
 	for ( var e = id; e < puntos.length; e += 1 ){
 		if (puntos[i].id != puntos[e].id) {
-		// ------- PUNTOS
-		var particles = new THREE.Geometry();
-						particles.vertices.push(new THREE.Vector3(puntos[i].point.x,obj.amounts[i]+5,puntos[i].point.z));
-					    particles.vertices.push(new THREE.Vector3(puntos[e].point.x,obj.amounts[e]+5,puntos[e].point.z));
-
-		var pMaterial = new THREE.PointCloudMaterial({
-			color: 0xFF0000,
-			size: 5,
-			blending: THREE.AdditiveBlending,
-			transparent: true,
-			opacity: 0.3,
-			sizeAttenuation: false
-		});
-
-	pointCloud = new THREE.PointCloud( particles, pMaterial );
-
-	pointCloud.name = "puntos";
-
-	//scene.add(pointCloud);
 	// ---------------
 	//  --LINEA CURVA
 			if (puntos[i].point.x<0) puntoX = puntos[i].point.x + 10;
@@ -394,13 +375,12 @@ for( var i = id; i < (id+1); i += 1) {
 			scene.add(line3);
             //group.children[e].material.color.setHex(0xAEB404*(e));
             //group.children[e].material.emissive.setHex(0xAEB404);
-            group2.children[e].material.color.setHex(0xAEB404*2);
-            group2.children[e].material.emissive.setHex(0xAEB404*2);
+            //group2.children[e].material.color.setHex(0xAEB404*2);
+            //group2.children[e].material.emissive.setHex(0xAEB404*2);
 			}
 		}
 	}
-for ( var u = id-1; u>=0; u-- ) { group.children[u].material.emissive.setHex(0x000000); group.children[u].material.opacity = 0.1;
-								  group2.children[u].material.emissive.setHex(0x000000); group2.children[u].material.opacity = 0.1;	}
+for ( var u = id-1; u>=0; u-- ) { group.children[u].material.opacity = 0.1; group2.children[u].material.opacity = 0.1;	}
 }
 
 function addGeoObject ( group, svgObject ) {

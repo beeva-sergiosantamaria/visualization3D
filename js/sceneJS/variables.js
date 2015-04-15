@@ -8,7 +8,9 @@ var scene, camera, group, group2, leyendasGroup, fechasMarcadores, controls, con
 var a2012, a2013, a2014, infoPanels, objetoActual, resetObject;
 var mouse = new THREE.Vector2();
 var pointCloud, colorSelect = 1;
-var valorDescuento = 36;
+var valorDescuento = 35;
+
+var CONTENIDO ,CUBIERTA ,LETREROS ,MARCADOR ,FECHARMARC, MARCUNICO ,ACTIONS ,INFOACTIONS;
 
 var longDistritos,longMarcador, longMarcadorUnico, longTravelPoints, longInfoPanels;
 
