@@ -55,6 +55,53 @@ body {
   color: white;
   padding: 10px;
 }
+.cajaImagen1 {
+  opacity: 1;
+  position: absolute;
+  left: 30px;
+  top:80px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.cajaImagenHide1 {
+  opacity: 0;
+  position: absolute;
+  left: 30px;
+  top:80px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.cajaImagen {
+  opacity: 1;
+  position: absolute;
+  left: 30px;
+  top:20px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.cajaImagenHide {
+  opacity: 0;
+  position: absolute;
+  left: 30px;
+  top:20px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.image {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
 #menu {
   position: absolute;
   bottom: 10px;

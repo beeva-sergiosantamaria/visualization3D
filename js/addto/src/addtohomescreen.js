@@ -118,7 +118,7 @@ ath.defaults = {
 	mandatory: true,			// you can't proceed if you don't add the app to the homescreen
 	autostart: true,			// show the message automatically
 	skipFirstVisit: false,		// show only to returning visitors (ie: skip the first time you visit)
-	startDelay: 1,				// display the message after that many seconds from page load
+	startDelay: 0,				// display the message after that many seconds from page load
 	lifespan: 15,				// life of the message in seconds
 	displayPace: 1440,			// minutes before the message is shown again (0: display every time, default 24 hours)
 	maxDisplayCount: 0,			// absolute maximum number of times the message will be shown to the user (0: no limit)
@@ -142,7 +142,7 @@ _extend(ath, {
 	hasToken: document.location.hash == '#ath' || _reSmartURL.test(document.location.href) || _reQueryString.test(document.location.search),
 	isRetina: window.devicePixelRatio && window.devicePixelRatio > 1,
 	isIDevice: (/iphone|ipod|ipad/i).test(_ua),
-	isMobileChrome: _ua.indexOf('Android') > -1 && (/Chrome\/[.0-9]*/).test(_ua),
+	isMobileChrome: _ua.indexOf('android') > -1 && _ua.indexOf('Android') > -1 && (/Chrome\/[.0-9]*/).test(_ua),
 	isMobileIE: _ua.indexOf('Windows Phone') > -1,
 	language: _nav.language && _nav.language.toLowerCase().replace('-', '_') || ''
 });
