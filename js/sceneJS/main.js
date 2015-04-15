@@ -263,9 +263,9 @@ function render() {
                           }
                         }
                     }    
-                    /////////////////////////////
+                    //////////////////////////////////
                     // interseccion marcadores unicos
-                    /////////////////////////////
+                    //////////////////////////////////
 
                     if (INTERSECTED3) cont3 = cont3+1;
 
@@ -291,9 +291,9 @@ function render() {
 
                         INTERSECTED3 = null;
                     }
-                    if (INTERSECTED3 && cont3>60 && controlsdevice) {
+                    if (INTERSECTED3 && cont3>30 && controlsdevice) {
 
-                        if ( intersects3.length > 0 && cont3 == 61) {
+                        if ( intersects3.length > 0 && cont3 == 31) {
                                 if(INTERSECTED3.name =='2012') {
                                     var alt = a2012[objetoTarget];
                                     new TWEEN.Tween(objetoActual.position).to({
