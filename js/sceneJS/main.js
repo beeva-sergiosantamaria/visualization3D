@@ -291,7 +291,7 @@ function render() {
 
                         INTERSECTED3 = null;
                     }
-                    if (INTERSECTED3 && cont2>60 && controlsdevice) {
+                    if (INTERSECTED3 && cont3>60 && controlsdevice) {
 
                         if ( intersects3.length > 0 && cont3 == 61) {
                                 if(INTERSECTED3.name =='2012') {

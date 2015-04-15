@@ -53,9 +53,9 @@ function addTravelPoints(travelPoints) {
 		context1.DoubleSide = true;
 		context1.font = "Bold 60px Arial";
 		context1.fillStyle = "rgba(255,255,255,1)";
-	    if(a==0) context1.fillText('viajar', 50, 100);
-	    if(a==1) context1.fillText('detalles', 50, 100);
-	    if(a==2) context1.fillText('borrar', 50, 100);
+	    if(a==0) context1.fillText('Viajar', 50, 100);
+	    if(a==1) context1.fillText('Detalles', 50, 100);
+	    if(a==2) context1.fillText('Borrar', 50, 100);
 
 		var texture1 = new THREE.Texture(canvas1) 
 		texture1.needsUpdate = true;
