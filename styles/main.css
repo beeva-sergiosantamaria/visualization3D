@@ -11,10 +11,29 @@ body {
   top: 60px;
   padding-left: 30px;
 }
+.caja2 {
+  position: absolute;
+  left: 210px;
+  top: 60px;
+  padding-left: 30px;
+}
 .indicaciones {
   opacity: 1;
   display: block;
   font-size: 20px;
+  font-weight: bold;
+  color: white;
+  font-family: "Times New Roman";
+  padding-right: 20px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.indicaciones2 {
+  opacity: 1;
+  display: block;
+  font-size: 12px;
   font-weight: bold;
   color: white;
   font-family: "Times New Roman";
@@ -75,11 +94,11 @@ body {
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
 }
-.cajaImagen {
-  opacity: 1;
+.cajaImagen2 {
   position: absolute;
+  top:60px;
+  opacity: 1;
   left: 30px;
-  top:20px;
   transition: opacity 1s ease-in-out;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
@@ -95,7 +114,16 @@ body {
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
 }
-.image {
+.imagen {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.imagen1 {
+  width: 160px;
+  height: 150px;
   opacity: 1;
   transition: opacity 1s ease-in-out;
   -webkit-transition: opacity 1s ease-in-out;
