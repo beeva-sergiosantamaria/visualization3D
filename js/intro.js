@@ -60,7 +60,7 @@ setTimeout(function(){ x.className = " indicaciones2" }, 82000);
 setTimeout(function(){ s.className = " cajaImagenHide" }, 88000);
 setTimeout(function(){ x.className = " hideIndicaciones" }, 89000);
 
-setTimeout(function(){ x.innerHTML = "Si tu dispositivo movil esta configurado para ello, tambien puedes emplear los comandos de voz para manejar la aplicacion. <br> Simplemente nombra cualquiera de los letreros indicativos para acceder a ellos o pronuncia 'general' para volver a la vista panorámica."}, 90000);
+setTimeout(function(){ x.innerHTML = "Si tu dispositivo movil esta configurado para ello, tambien puedes emplear los comandos de voz para manejar la aplicación. <br> Simplemente nombra cualquiera de los letreros indicativos para acceder a ellos o pronuncia 'general' para volver a la vista panorámica."}, 90000);
 setTimeout(function(){ t.className = " caja" }, 90000);
 setTimeout(function(){ x.className = " indicaciones" }, 91000);
 setTimeout(function(){ x.className = " hideIndicaciones" }, 98000);
