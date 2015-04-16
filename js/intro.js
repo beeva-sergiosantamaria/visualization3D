@@ -54,7 +54,7 @@ setTimeout(function(){ r.className = " cajaImagenHide" }, 80000);
 setTimeout(function(){ x.className = " hideIndicaciones" }, 80000);
 
 setTimeout(function(){ t.className = " caja2" }, 81000);
-setTimeout(function(){ x.innerHTML = "En la parte superior podras ver un marcador a traves del cual podras realizar acciones que afectaran a todo el mapa.<br> Fija la mirada en cualquiera de las fichas anuales para que el mapa varíe en funcion de los ingresos del año seleccionado." }, 81000);
+setTimeout(function(){ x.innerHTML = "En la parte superior podrás ver un marcador a traves del cual podrás realizar acciones que afectaran a todo el mapa.<br> Fija la mirada en cualquiera de las fichas anuales para que el mapa varíe en funcion de los ingresos del año seleccionado." }, 81000);
 setTimeout(function(){ s.className = " cajaImagen2" }, 82000);
 setTimeout(function(){ x.className = " indicaciones2" }, 82000);
 setTimeout(function(){ s.className = " cajaImagenHide" }, 88000);
