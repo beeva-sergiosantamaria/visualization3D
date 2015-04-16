@@ -43,6 +43,19 @@ body {
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
 }
+.hideIndicaciones2 {
+  opacity:0;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  font-family: "Times New Roman";
+  padding-right: 20px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
 .hideIndicaciones {
   opacity:0;
   display: block;
@@ -98,6 +111,16 @@ body {
   position: absolute;
   top:60px;
   opacity: 1;
+  left: 30px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+.cajaImagenHide2 {
+  position: absolute;
+  top:60px;
+  opacity: 0;
   left: 30px;
   transition: opacity 1s ease-in-out;
   -webkit-transition: opacity 1s ease-in-out;

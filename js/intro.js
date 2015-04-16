@@ -40,25 +40,25 @@ setTimeout(function(){ x.className = " indicaciones" }, 36000);
 
 setTimeout(function(){ x.className = " hideIndicaciones" }, 41000);
 setTimeout(function(){ t.className = " caja2" }, 42000);
-setTimeout(function(){ x.innerHTML = "1.- Datos dispone de 3 fichas anuales con las que modificar la altura del distrito en funcion de los ingresos de ese año en concreto.<br>2.- Viajar te ofrece la posibilidad de desplazarte automaticamente a ese distrito.<br>3.- Detalles te ofrece la posibilidad de activar la vista de detalles.<br>4.- Borrar restaura el mapa al estado inicial." }, 42000);
+setTimeout(function(){ x.innerHTML = "<b>1.- Datos </b>dispone de 3 fichas anuales con las que modificar la altura del distrito en funcion de los ingresos de ese año en concreto.<br><b>2.- Viajar </b>te ofrece la posibilidad de desplazarte automaticamente a ese distrito.<br><b>3.- Detalles </b>te ofrece la posibilidad de activar la vista de detalles.<br><b>4.- Borrar </b>restaura el mapa al estado inicial." }, 42000);
 setTimeout(function(){ z.className = " cajaImagen2" }, 43000);
 setTimeout(function(){ x.className = " indicaciones2" }, 44000);
-setTimeout(function(){ z.className = " cajaImagenHide" }, 66000);
-setTimeout(function(){ x.className = " hideIndicaciones" }, 67000);
+setTimeout(function(){ z.className = " cajaImagenHide2" }, 66000);
+setTimeout(function(){ x.className = " hideIndicaciones2" }, 67000);
 
 setTimeout(function(){ t.className = " caja2" }, 68000);
 setTimeout(function(){ x.innerHTML = "Detalles: <br> Al activar la opcion detalles, la configuración del mapa camiará. Las líneas rojas te indican todos aquellos distritos desde los que las personas han ido a realizar compras al distrito en el que te encuentras.<br> El resto de distritos se presenaran translucidos." }, 68000);
 setTimeout(function(){ r.className = " cajaImagen2" }, 69000);
 setTimeout(function(){ x.className = " indicaciones2" }, 70000);
-setTimeout(function(){ r.className = " cajaImagenHide" }, 80000);
-setTimeout(function(){ x.className = " hideIndicaciones" }, 80000);
+setTimeout(function(){ r.className = " cajaImagenHide2" }, 80000);
+setTimeout(function(){ x.className = " hideIndicaciones2" }, 80000);
 
 setTimeout(function(){ t.className = " caja2" }, 81000);
 setTimeout(function(){ x.innerHTML = "En la parte superior podrás ver un marcador a traves del cual podrás realizar acciones que afectaran a todo el mapa.<br> Fija la mirada en cualquiera de las fichas anuales para que el mapa varíe en funcion de los ingresos del año seleccionado." }, 81000);
 setTimeout(function(){ s.className = " cajaImagen2" }, 82000);
 setTimeout(function(){ x.className = " indicaciones2" }, 82000);
-setTimeout(function(){ s.className = " cajaImagenHide" }, 88000);
-setTimeout(function(){ x.className = " hideIndicaciones" }, 89000);
+setTimeout(function(){ s.className = " cajaImagenHide2" }, 88000);
+setTimeout(function(){ x.className = " hideIndicaciones2" }, 89000);
 
 setTimeout(function(){ x.innerHTML = "Si tu dispositivo movil esta configurado para ello, tambien puedes emplear los comandos de voz para manejar la aplicación. <br> Simplemente nombra cualquiera de los letreros indicativos para acceder a ellos o pronuncia 'general' para volver a la vista panorámica."}, 90000);
 setTimeout(function(){ t.className = " caja" }, 90000);
