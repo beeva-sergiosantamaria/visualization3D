@@ -5,6 +5,7 @@ var t = document.getElementById("caja");
 var y = document.getElementById("cajaImagen1");
 var z = document.getElementById("cajaImagen2");
 var r = document.getElementById("cajaImagen3");
+var s = document.getElementById("cajaImagen4");
 
 setTimeout(function(){ x.className = " hideIndicaciones" }, 3000);
 setTimeout(function(){ x.innerHTML="Antes de comenzar, permítenos que te hagamos unas breves indicaciones." }, 4000);
@@ -52,6 +53,21 @@ setTimeout(function(){ x.className = " indicaciones2" }, 70000);
 setTimeout(function(){ r.className = " cajaImagenHide" }, 80000);
 setTimeout(function(){ x.className = " hideIndicaciones" }, 80000);
 
-setTimeout(function(){ x.innerHTML = " Fija el punto de mira en cualquiera de las opciones para iniciarla." }, 81000);
-setTimeout(function(){ x.className = " indicaciones" }, 82000);
-setTimeout(function(){ x.className = " hideIndicaciones" }, 86000);
+setTimeout(function(){ t.className = " caja2" }, 81000);
+setTimeout(function(){ x.innerHTML = "En la parte superior podras ver un marcador a traves del cual podras realizar acciones que afectaran a todo el mapa.<br> Fija la mirada en cualquiera de las fichas anuales para que el mapa varíe en funcion de los ingresos del año seleccionado." }, 81000);
+setTimeout(function(){ s.className = " cajaImagen2" }, 82000);
+setTimeout(function(){ x.className = " indicaciones2" }, 82000);
+setTimeout(function(){ s.className = " cajaImagenHide" }, 88000);
+setTimeout(function(){ x.className = " hideIndicaciones" }, 89000);
+
+setTimeout(function(){ x.innerHTML = "Si tu dispositivo movil esta configurado para ello, tambien puedes emplear los comandos de voz para manejar la aplicacion. <br> Simplemente nombra cualquiera de los letreros indicativos para acceder a ellos o pronuncia 'general' para volver a la vista panorámica."}, 90000);
+setTimeout(function(){ t.className = " caja" }, 90000);
+setTimeout(function(){ x.className = " indicaciones" }, 91000);
+setTimeout(function(){ x.className = " hideIndicaciones" }, 98000);
+
+setTimeout(function(){ x.innerHTML = " Fija el punto de mira en cualquiera de las opciones para iniciarla." }, 99000);
+setTimeout(function(){ x.className = " indicaciones" }, 100000);
+setTimeout(function(){ x.className = " hideIndicaciones" }, 104000);
+
+setTimeout(function(){ x.innerHTML = " Pulsa 'comenzar' y disfruta de la experiencia." }, 105000);
+setTimeout(function(){ x.className = " indicaciones" }, 106000);
