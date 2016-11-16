@@ -460,7 +460,7 @@ function addGeoObject2 ( group, svgObject ) {
             opacity: 0.9  
 		});
 
-		//var material1 = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/textures/text21.jpg') } );
+		//var material1 = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/textures/cesped.jpg') } );
 
 		amount = 10;
 		var altura = theAmounts[i];

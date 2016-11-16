@@ -2,6 +2,11 @@
 
 var voiceEngine = new VoiceEngine();
 
+if( window.innerHeight == screen.height-30) { 
+	//Id("puntero").className = "punteroWeb";
+	console.log('pantalla completa');
+}
+
 init();
 animate();
 
@@ -23,24 +28,31 @@ function init() {
         console.log("Oriented device");
         camera.position.set(-200, 800, 4500);
         camera.rotation.y = 90;
+        crosshair = new THREE.Mesh(
+            new THREE.RingGeometry( 0.001, 3, 32 ),
+            new THREE.MeshBasicMaterial( {
+                color: 0xddbb22,
+            } )
+        );
+        crosshair.position.z = - 400;
+        camera.add(crosshair);
         scene.add(camera);
         controlsdevice = new DeviceOrientationController(camera);
         controlsdevice.connect();
-		voiceEngine.start();
+		//voiceEngine.start();
 
     }
 
     else {
         document.getElementById("menu").style.display = "";
-        document.getElementById("puntero").style.display = "none";
         document.getElementById("info").classList.add("info2");
         document.getElementById("panel").classList.add("panel2");
 
         camera.position.set(0, 4000, 10000);
         scene.add(camera);
         controls = new THREE.FirstPersonControls( camera );
-				controls.movementSpeed = 1000;
-				controls.lookSpeed = 0.06;
+		controls.movementSpeed = 1000;
+		controls.lookSpeed = 0.06;
         valorDescuento = 33;        
 		//voiceEngine.start();
     }
@@ -121,10 +133,14 @@ function init() {
     raycaster4 = new THREE.Raycaster();
 
     /// Global : renderer
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setClearColor(0x0B3B17);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer = new THREE.WebGLRenderer( { antialias: true, preserveDrawingBuffer: true, alpha: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setClearColor( 0xffffff, 0 );
+    //renderer.shadowMap.enabled = true;
+    //renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.setViewport( 0,0, window.innerWidth, window.innerHeight );
+    renderer.getMaxAnisotropy();
 
     container.appendChild(renderer.domElement);
 
@@ -518,7 +534,7 @@ function animate() {
 		render();
 
 		if(controls) controls.update( clock.getDelta() );
-		if(controlsdevice) controlsdevice.update();
+		if(controlsdevice) { controlsdevice.update(); /*console.log('device control: ', controlsdevice.deviceOrientation.gamma);*/ }
 		if(controlsLeap) controlsLeap.up
 
 };

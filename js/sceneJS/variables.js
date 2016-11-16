@@ -3,7 +3,7 @@
 
 
 
-var renderer, mesh, effect, composer, marcador, INTERSECTED, INTERSECTED2, INTERSECTED3, INTERSECTED4, grupoActual, grupoNuevo, marcadorUnico, valor, mirrorCube, mirrorCubeCamera, travelPoints, objetoTarget;
+var renderer, mesh, effect, composer, marcador, INTERSECTED, INTERSECTED2, INTERSECTED3, INTERSECTED4, grupoActual, grupoNuevo, marcadorUnico, valor, mirrorCube, mirrorCubeCamera, travelPoints, objetoTarget, crosshair;
 var scene, camera, group, group2, leyendasGroup, fechasMarcadores, controls, controller, controlsdevice, controlsLeap, raycaster, leyendas, raycaster2, graficas, raycaster3, raycaster4, destino, target, punto;
 var a2012, a2013, a2014, infoPanels, objetoActual, resetObject;
 var mouse = new THREE.Vector2();
